@@ -25,8 +25,10 @@ Or install it yourself as:
 # config/initializers/swagger.rb
 Jsonapi::Swagger.config do |config|
   config.use_rswag = false
-  config.version = '2.0'
-  config.info = { title: 'API V1', version: 'V1'}
+  config.openapi = '3.0.1'
+  config.components = {}
+  config.security = []
+  config.info = { title: 'API v1', version: 'v1'}
   config.file_path = 'v1/swagger.json'
 end
 ```
