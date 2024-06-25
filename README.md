@@ -7,7 +7,7 @@ Generate JSONAPI Swagger Doc.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jsonapi-swagger'
+gem 'jsonapi-swagger', github: 'lvitals/jsonapi-swagger', branch: 'main'
 ```
 
 And then execute:
