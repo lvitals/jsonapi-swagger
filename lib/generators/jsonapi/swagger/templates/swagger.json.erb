@@ -1,5 +1,5 @@
 {
-  "swagger": "<%= swagger_version %>",
+  <%= swagger_openapi.nil? ? "\"swagger\": \"#{swagger_version}\"" : "\"openapi\": \"#{swagger_openapi}\"" %>,
   "info": <%= swagger_info %>,
   "basePath" : "<%= swagger_base_path %>",
   <%-
@@ -315,5 +315,7 @@ else
   doc['paths']["/#{route_resouces}/{id}"].delete(:delete)
 end
 -%>
-  "paths": <%= JSON.pretty_generate(doc['paths'] ) %>
+  "paths": <%= JSON.pretty_generate(doc['paths'] ) %>,
+  "components" : <%= swagger_components %>,
+  "security" : <%= swagger_security %>
 }

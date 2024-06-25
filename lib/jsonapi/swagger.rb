@@ -10,10 +10,14 @@ module Jsonapi
     class Error < StandardError; end
 
     class << self
-      attr_accessor :version, :info, :file_path, :base_path, :use_rswag
+      attr_accessor :version, :openapi, :info, :file_path, :base_path, :use_rswag, :components, :security
 
       def config
         yield self
+      end
+
+      def openapi
+        @openapi ||= '3.0.1'
       end
 
       def version
@@ -22,6 +26,14 @@ module Jsonapi
 
       def info
         @info ||= { title: 'API V1', version: 'V1' }
+      end
+
+      def components
+        @components ||= {}
+      end
+
+      def security
+        @security ||= []
       end
 
       def file_path
@@ -33,7 +45,7 @@ module Jsonapi
       end
 
       def use_rswag
-        @use_rswag ||= true
+        @use_rswag ||= false
       end
 
       def attribute_default

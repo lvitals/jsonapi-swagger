@@ -28,7 +28,6 @@ module Jsonapi
     def json_file
       @json_file ||= File.join(
         'swagger',
-        class_path,
         swagger_file_path
       )
     end
@@ -37,8 +36,20 @@ module Jsonapi
       Jsonapi::Swagger.version
     end
 
+    def swagger_openapi
+      Jsonapi::Swagger.openapi
+    end
+
     def swagger_info
       JSON.pretty_generate(Jsonapi::Swagger.info)
+    end
+
+    def swagger_components
+      JSON.pretty_generate(Jsonapi::Swagger.components)
+    end
+
+    def swagger_security
+      JSON.pretty_generate(Jsonapi::Swagger.security)
     end
 
     def swagger_base_path
@@ -66,7 +77,7 @@ module Jsonapi
     end
 
     def route_resouces
-      resouces_name.tableize
+      resouces_name.tableize.gsub('_', '-')
     end
 
     def model_class_name
