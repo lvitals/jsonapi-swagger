@@ -1,0 +1,8 @@
+Description:
+    Create a JSONAPI Swagger
+
+Example:
+    rails generate jsonapi:swagger api/v1/user
+
+    This will create:
+        spec/requests/api/v1/user_spec.rb
