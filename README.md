@@ -12,11 +12,9 @@ gem 'jsonapi-swagger', github: 'lvitals/jsonapi-swagger', branch: 'main'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jsonapi-swagger
+```bash
+$ bundle install
+```
 
 ## Usage
 
