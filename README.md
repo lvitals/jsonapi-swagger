@@ -58,4 +58,4 @@ rails rswag:specs:swaggerize
 
 - [JSONAPI](https://jsonapi.org/)
 - [JSONAPI::Resources](http://jsonapi-resources.com/)
-- [Rswag](https://github.com/domaindrivendev/rswag)
+- [Rswag](https://github.com/rswag/rswag)
